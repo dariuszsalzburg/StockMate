@@ -8,9 +8,14 @@ using System.Windows.Input;
 
 namespace StockMate.WPF.State.Navigation
 {
+    public enum ViewType
+    {
+        Home,
+        Portfolio
+    }
     public interface INavigator
     {
-        ViewModelBase CurrentViewMOdel { get; }
+        ViewModelBase CurrentViewMOdel { get; set; }
         ICommand UpdateCurrentViewModelCommand { get; }
 
 
