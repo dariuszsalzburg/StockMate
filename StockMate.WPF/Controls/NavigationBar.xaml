@@ -8,11 +8,6 @@
              mc:Ignorable="d" 
              Height="Auto" Width="150">
 
-
-   
-
-
-
     <Grid Background="#8AA563">
         <!-- StackPanel dla menu bocznego -->
         <StackPanel Orientation="Vertical">

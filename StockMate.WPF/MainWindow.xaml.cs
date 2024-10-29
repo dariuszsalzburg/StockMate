@@ -19,7 +19,6 @@ namespace StockMate.WPF
         public MainWindow()
         {
             InitializeComponent();
-            
         }
     }
 }
