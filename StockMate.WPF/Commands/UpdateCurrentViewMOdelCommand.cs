@@ -9,12 +9,12 @@ using System.Windows.Input;
 
 namespace StockMate.WPF.Commands
 {
-    public class UpdateCurrentViewMOdelCommand : ICommand
+    public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
         private INavigator _navigator;
 
-        public UpdateCurrentViewMOdelCommand(INavigator navigator)
+        public UpdateCurrentViewModelCommand(INavigator navigator)
         {
             _navigator = navigator;
         }
@@ -32,10 +32,10 @@ namespace StockMate.WPF.Commands
                 switch (viewType)
                 {
                     case ViewType.Home:
-                        _navigator.CurrentViewMOdel = new HomeViewModel();
+                        _navigator.CurrentViewModel = new HomeViewModel();
                         break;
                     case ViewType.Portfolio:
-                        _navigator.CurrentViewMOdel = new PortfolioViewModel();
+                        _navigator.CurrentViewModel = new PortfolioViewModel();
                         break;
                     default: break;
 
