@@ -15,7 +15,7 @@ namespace StockMate.WPF.State.Navigation
     }
     public interface INavigator
     {
-        ViewModelBase CurrentViewMOdel { get; set; }
+        ViewModelBase CurrentViewModel { get; set; }
         ICommand UpdateCurrentViewModelCommand { get; }
 
 

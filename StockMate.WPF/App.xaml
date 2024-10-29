@@ -1,9 +1,19 @@
 ﻿<Application x:Class="StockMate.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:StockMate.WPF"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModels="clr-namespace:StockMate.WPF.ViewModels"
+             xmlns:views ="clr-namespace:StockMate.WPF.Views"
+             xmlns:local="clr-namespace:StockMate.WPF">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:TypeExtension viewModels:HomeViewModel}">
+
+            <views:HomeView/>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:TypeExtension viewModels:PortfolioViewModel}">
+
+            <views:PortfolioView/>
+
+        </DataTemplate>
     </Application.Resources>
 </Application>
