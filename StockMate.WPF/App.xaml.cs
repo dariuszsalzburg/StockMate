@@ -15,6 +15,7 @@ namespace StockMate.WPF
 
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
+            w.Show();
             base.OnStartup(e);
         }
 
