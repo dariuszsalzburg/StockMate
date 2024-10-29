@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.WPF.ViewModels
 {
-    internal class HomeViewModel
+    public class HomeViewModel: ViewModelBase
     {
     }
 }

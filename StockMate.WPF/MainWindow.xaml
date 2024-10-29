@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <controls:NavigationBar Grid.Column="0"/>
+        <controls:NavigationBar Grid.Column="0" DataContext="{Binding Navigator}"/>
 
         <Grid Grid.Column="1" Background="White">
             <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
