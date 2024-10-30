@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StockMate.API\StockMate.API.csproj" />
     <ProjectReference Include="..\StockMate.Domain\StockMate.Domain.csproj" />
     <ProjectReference Include="..\StockMate.EntityFramework\StockMate.EntityFramework.csproj" />
   </ItemGroup>
