@@ -1,4 +1,5 @@
-﻿using StockMate.WPF.State.Navigation;
+﻿using StockMate.API.Services;
+using StockMate.WPF.State.Navigation;
 using StockMate.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace StockMate.WPF.Commands
                 switch (viewType)
                 {
                     case ViewType.Home:
-                        _navigator.CurrentViewModel = new HomeViewModel();
+                        _navigator.CurrentViewModel = new HomeViewModel(MajorIndexViewModel.LaoadMajorIndexViewModel(new MajorIndexService()));
                         break;
                     case ViewType.Portfolio:
                         _navigator.CurrentViewModel = new PortfolioViewModel();

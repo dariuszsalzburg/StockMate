@@ -26,10 +26,28 @@ namespace StockMate.WPF.ViewModels
             return majorIndexViewModel;
 
         }
-        private async Task LoadMajorIndexes()
+        private void LoadMajorIndexes()
         {
-            DowJones = await _majorIndexService.GetMajorIndex(MajorIndexType.DowJones);
-            Nsdaq = await _majorIndexService.GetMajorIndex(MajorIndexType.Nsdaq);
+            _majorIndexService.GetMajorIndex(MajorIndexType.DowJones).ContinueWith(task =>
+            {
+                if (task.Exception == null)
+                {
+                    DowJones = task.Result;
+                }
+
+
+
+            });
+           _majorIndexService.GetMajorIndex(MajorIndexType.Nsdaq).ContinueWith(task =>
+           {
+               if (task.Exception == null)
+               {
+                   Nsdaq = task.Result;
+               }
+
+
+
+           });
 
         }
     }
