@@ -20,5 +20,6 @@ namespace StockMate.Domain.Models
         public string sector { get; set; }
 
         public MajorIndexType Type { get; set; }
+
     }
 }

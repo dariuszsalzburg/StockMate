@@ -6,6 +6,6 @@ namespace StockMate.Domain.Services
 {
     public interface IMajorIndexService
     {
-        Task<List<MajorIndex>> GetMajorIndex(MajorIndexType indexType);
+        Task<MajorIndex> GetMajorIndex(MajorIndexType indexType);
     }
 }

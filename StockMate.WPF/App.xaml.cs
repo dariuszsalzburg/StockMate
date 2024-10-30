@@ -14,13 +14,7 @@ namespace StockMate.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            new MajorIndexService().GetMajorIndex(Domain.Models.MajorIndexType.DowJones).ContinueWith((task) => {
-
-
-            var index = task.Result;
-            
-            
-            });
+       
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
             w.Show();
