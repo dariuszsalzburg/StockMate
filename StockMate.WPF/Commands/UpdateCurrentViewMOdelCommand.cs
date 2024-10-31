@@ -1,11 +1,7 @@
-﻿using StockMate.API.Services;
+﻿using StockMate.Domain.Services;
 using StockMate.WPF.State.Navigation;
 using StockMate.WPF.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace StockMate.WPF.Commands
@@ -13,34 +9,28 @@ namespace StockMate.WPF.Commands
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
-        private INavigator _navigator;
+        private readonly INavigator _navigator;
 
         public UpdateCurrentViewModelCommand(INavigator navigator)
         {
             _navigator = navigator;
         }
 
-        public bool CanExecute(object? parameter)
-        {
-            return true;
-        }
+        public bool CanExecute(object? parameter) => true;
 
         public void Execute(object? parameter)
         {
-            if (parameter is ViewType)
+            if (parameter is ViewType viewType)
             {
-                ViewType viewType = (ViewType)parameter;
                 switch (viewType)
                 {
                     case ViewType.Home:
-                        _navigator.CurrentViewModel = new HomeViewModel(MajorIndexViewModel.LaoadMajorIndexViewModel(new MajorIndexService()));
+                        _navigator.CurrentViewModel = new HomeViewModel(CryptoAssetViewModel.LoadCryptoAssetViewModel(new CryptoAssetService()));
                         break;
                     case ViewType.Portfolio:
                         _navigator.CurrentViewModel = new PortfolioViewModel();
                         break;
                     default: break;
-
-
                 }
             }
         }
