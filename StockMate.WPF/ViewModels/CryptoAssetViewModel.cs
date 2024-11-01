@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.WPF.ViewModels
 {
-    public class CryptoAssetViewModel
+    public class CryptoAssetViewModel : ViewModelBase
     {
         private readonly ICryptoAssetService _cryptoAssetService;
 
@@ -12,9 +12,32 @@ namespace StockMate.WPF.ViewModels
         {
             _cryptoAssetService = cryptoAssetService;
         }
+        private CryptoAsset _btc;
+        public CryptoAsset Bitcoin 
+        { 
+            
+            
+            get {
 
-        public CryptoAsset Bitcoin { get; set; }
-     
+
+
+                return _btc;
+                
+                    
+                }
+
+
+            set { _btc = value; OnPropertyChanged(nameof(Bitcoin)); } 
+        
+        
+        }
+
+        
+
+   
+
+
+
 
         public static CryptoAssetViewModel LoadCryptoAssetViewModel(ICryptoAssetService cryptoAssetService)
         {
@@ -25,7 +48,7 @@ namespace StockMate.WPF.ViewModels
 
         private void LoadCryptoAssets()
         {
-            _cryptoAssetService.GetCryptoAsset("BTCUSD").ContinueWith(task =>
+            _cryptoAssetService.GetCryptoAsset("BTCUSD").ContinueWith((task) =>
             {
                 if (task.Exception == null)
                 {
