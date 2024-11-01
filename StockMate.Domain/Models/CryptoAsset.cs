@@ -12,5 +12,11 @@ namespace StockMate.Domain.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public decimal Change { get; set; }
+
+        public decimal ChangesPercentage { get; set; }
+
+        public decimal DayLow { get; set; }
+
+        public decimal DayHigh { get; set; }
     }
 }

@@ -26,7 +26,10 @@ namespace StockMate.Domain.Services
                 Symbol = root.GetProperty("symbol").GetString(),
                 Name = root.GetProperty("name").GetString(),
                 Price = root.GetProperty("price").GetDecimal(),
-                Change = root.GetProperty("change").GetDecimal()
+                Change = root.GetProperty("change").GetDecimal(),
+                ChangesPercentage =root.GetProperty("changesPercentage").GetDecimal(),
+                DayLow = root.GetProperty("dayLow").GetDecimal(),
+                DayHigh = root.GetProperty("dayHigh").GetDecimal()
             };
         }
 

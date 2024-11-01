@@ -19,17 +19,36 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
+                <!-- Price -->
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Text="Price"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding Price, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
 
+                <!-- Changes -->
                 <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="Changes"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding Change, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+
+                <!-- Changes (%) -->
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Text="Changes (%)"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding ChangesPercentage, StringFormat={}{0:c}, FallbackValue=%0.00}"/>
+
+                <!-- Low (Day) -->
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" Text="Low (Day)"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding DayLow, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+
+                <!-- High (Day) -->
+                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5" Text="High (Day)"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding DayHigh, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
             </Grid>
         </Grid>
     </Border>
