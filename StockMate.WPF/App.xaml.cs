@@ -20,7 +20,7 @@ namespace StockMate.WPF
         protected override async void OnStartup(StartupEventArgs e)
         {
 
-            IDataService<Account> accountService = new GenericDataService<Account>(new EntityFramework.StockMateDbContextFactory());
+            IDataService<Account> accountService = new AccountDataService(new EntityFramework.StockMateDbContextFactory());
             ICryptoAssetService cryptoAssetService = new CryptoAssetService();
             IBuyStockService buyStockService = new BuyStockService(cryptoAssetService,accountService);
             Account buyer = await accountService.Get(1);

@@ -46,7 +46,7 @@ namespace StockMate.Domain.Services.TransactionService
                     PricePerShare = stockPrice,
                     Symbol = symbol
                 },
-                DateProcessed = DateTime.UtcNow,
+                DateProcessed = DateTime.Now,
                 Shares = shares,
                 isPurchase = true
 
