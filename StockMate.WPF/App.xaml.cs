@@ -25,7 +25,7 @@ namespace StockMate.WPF
             IBuyStockService buyStockService = new BuyStockService(cryptoAssetService,accountService);
             Account buyer = await accountService.Get(1);
 
-            await buyStockService.BuyStock(buyer, "USDd);
+            await buyStockService.BuyStock(buyer, "BTCUSD",5);
 
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
