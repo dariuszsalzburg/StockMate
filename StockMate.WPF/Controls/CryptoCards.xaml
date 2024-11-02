@@ -13,7 +13,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Text="{Binding Name, FallbackValue=Name}"/>
+            <TextBlock Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Text="{Binding Name}"/>
 
             <Grid Grid.Row="1" Margin="0 10">
                 <Grid.RowDefinitions>
@@ -32,23 +32,23 @@
 
                 <!-- Price -->
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Text="Price"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding Price, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" HorizontalAlignment="Center" Text="{Binding Price, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
 
                 <!-- Changes -->
                 <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="Changes"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding Change, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Center" Text="{Binding Change, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
 
                 <!-- Changes (%) -->
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Text="Changes (%)"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding ChangesPercentage, StringFormat={}{0:c}, FallbackValue=%0.00}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5"  Text="Changes (%)"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" HorizontalAlignment="Center" Text="{Binding ChangesPercentageAsDecimal, StringFormat={}{0:P2}, FallbackValue=%0.00}"/>
 
                 <!-- Low (Day) -->
                 <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" Text="Low (Day)"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding DayLow, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" HorizontalAlignment="Center" Text="{Binding DayLow, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
 
                 <!-- High (Day) -->
                 <TextBlock Grid.Row="4" Grid.Column="0" Margin="5" Text="High (Day)"/>
-                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Text="{Binding DayHigh, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5" HorizontalAlignment="Center" Text="{Binding DayHigh, StringFormat={}{0:c}, FallbackValue=$0.00}"/>
             </Grid>
         </Grid>
     </Border>

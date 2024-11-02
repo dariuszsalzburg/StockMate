@@ -15,6 +15,8 @@ namespace StockMate.Domain.Models
 
         public decimal ChangesPercentage { get; set; }
 
+        public decimal ChangesPercentageAsDecimal => ChangesPercentage/100;
+
         public decimal DayLow { get; set; }
 
         public decimal DayHigh { get; set; }

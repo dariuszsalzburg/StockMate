@@ -14,11 +14,15 @@ namespace StockMate.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-       
+            
+
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
             w.Show();
+
             base.OnStartup(e);
+
+
 
 
         }

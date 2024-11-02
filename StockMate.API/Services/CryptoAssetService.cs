@@ -19,7 +19,7 @@ namespace StockMate.Domain.Services
         {
             var response = await _httpClient.GetStringAsync($"https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey=76ae2ead5f88847fb8d8b9ed2b27b4c7");
             var jsonDocument = JsonDocument.Parse(response);
-            var root = jsonDocument.RootElement[0]; // Pobieramy pierwszy element tablicy
+            var root = jsonDocument.RootElement[0]; 
 
             return new CryptoAsset
             {
