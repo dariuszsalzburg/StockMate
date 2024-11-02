@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace StockMate.WPF.ViewModels
 {
-    public class HomeViewModel: ViewModelBase
+    public class HomeViewModel : ViewModelBase
     {
+        public CryptoAssetViewModel CryptoAssetViewModel { get; set; }
 
-        public MajorIndexViewModel MajorIndexViewModel { get; set; }
-
-
-        public HomeViewModel(MajorIndexViewModel majorIndexViewModel) 
-        { 
-        
-        MajorIndexViewModel = majorIndexViewModel;
-        
+        public HomeViewModel(CryptoAssetViewModel cryptoAssetViewModel)
+        {
+            CryptoAssetViewModel = cryptoAssetViewModel;
         }
     }
 }

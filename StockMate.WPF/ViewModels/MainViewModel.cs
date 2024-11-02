@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
+using StockMate.Domain.Services;
 using StockMate.WPF.State.Navigation;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,19 @@ namespace StockMate.WPF.ViewModels
     {
         public INavigator Navigator { get; set; } = new Navigator();
 
+       
+
+        public CryptoAssetViewModel CryptoAssetViewModel { get; }
+
+        public MainViewModel(ICryptoAssetService cryptoAssetService)
+        {
+            CryptoAssetViewModel = CryptoAssetViewModel.LoadCryptoAssetViewModel(cryptoAssetService);
+
+        }
+
+        public MainViewModel()
+        {
+            Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Home);
+        }
     }
 }

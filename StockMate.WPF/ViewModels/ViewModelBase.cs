@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.WPF.ViewModels
 {
-    public class ViewModelBase
+    public class ViewModelBase : ObservableObject
     {
     }
 }

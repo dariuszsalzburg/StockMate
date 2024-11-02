@@ -1,4 +1,4 @@
-﻿using StockMate.API.Services;
+﻿
 using StockMate.Domain.Services;
 using StockMate.WPF.ViewModels;
 using System.Configuration;
@@ -14,11 +14,17 @@ namespace StockMate.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-       
+            
+
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
             w.Show();
+
             base.OnStartup(e);
+
+
+
+
         }
 
 
