@@ -15,29 +15,14 @@ namespace StockMate.WPF.ViewModels
         private CryptoAsset _btc;
         public CryptoAsset Bitcoin 
         { 
-            
-            
+     
             get {
-
-
-
-                return _btc;
-                
-                    
+                return _btc;   
                 }
 
-
             set { _btc = value; OnPropertyChanged(nameof(Bitcoin)); } 
-        
-        
+           
         }
-
-        
-
-   
-
-
-
 
         public static CryptoAssetViewModel LoadCryptoAssetViewModel(ICryptoAssetService cryptoAssetService)
         {
@@ -54,9 +39,7 @@ namespace StockMate.WPF.ViewModels
                 {
                     Bitcoin = task.Result;
                 }
-            });
-
-           
+            }); 
         }
     }
 }

@@ -57,7 +57,7 @@ namespace StockMate.EntityFramework.Services
 
 
 
-        public async Task<T> GetById(int id)
+        public async Task<T> Get(int id)
         {
             using (StockMateDbContext context = _contextFactory.CreateDbContext())
             {
