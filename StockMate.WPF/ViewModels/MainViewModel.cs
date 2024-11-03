@@ -11,20 +11,11 @@ namespace StockMate.WPF.ViewModels
 {
     public class MainViewModel:ViewModelBase
     {
-        public INavigator Navigator { get; set; } = new Navigator();
+        public INavigator Navigator { get; set; }
 
-       
-
-        public CryptoAssetViewModel CryptoAssetViewModel { get; }
-
-        public MainViewModel(ICryptoAssetService cryptoAssetService)
+        public MainViewModel(INavigator navigator)
         {
-            CryptoAssetViewModel = CryptoAssetViewModel.LoadCryptoAssetViewModel(cryptoAssetService);
-
-        }
-
-        public MainViewModel()
-        {
+            Navigator = navigator;
             Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Home);
         }
     }

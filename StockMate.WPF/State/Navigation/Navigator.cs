@@ -1,5 +1,6 @@
 ﻿using StockMate.WPF.Commands;
 using StockMate.WPF.ViewModels;
+using StockMate.WPF.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,14 @@ namespace StockMate.WPF.State.Navigation
                 } 
         }
 
-        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
+        public ICommand UpdateCurrentViewModelCommand { get; set; }
+
+        public Navigator(IStockMateViewModelAbstractFactory viewModelFactory)
+        {
+            UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(this, viewModelFactory);
+        }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
