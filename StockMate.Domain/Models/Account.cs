@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace StockMate.Domain.Models
 {
-    public class Account
+    public class Account : DomainObject
     {
-        public int Id { get; set; }
+       
         public User AccountHolder { get; set; }
 
         public double Balance { get; set; }
 
-        public IEnumerable<AssetTransaction> AssetTransactions { get; set; }
+        public ICollection<AssetTransaction> AssetTransactions { get; set; }
     }
 }

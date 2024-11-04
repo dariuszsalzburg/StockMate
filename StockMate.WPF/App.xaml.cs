@@ -1,5 +1,10 @@
 ﻿
+
+using StockMate.Domain.Models;
 using StockMate.Domain.Services;
+using StockMate.Domain.Services.TransactionService;
+using StockMate.EntityFramework.Services;
+
 using StockMate.WPF.ViewModels;
 using System.Configuration;
 using System.Data;
@@ -12,9 +17,15 @@ namespace StockMate.WPF
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
-            
+
+            IDataService<Account> accountService = new AccountDataService(new EntityFramework.StockMateDbContextFactory());
+            ICryptoAssetService cryptoAssetService = new CryptoAssetService();
+            IBuyStockService buyStockService = new BuyStockService(cryptoAssetService,accountService);
+            Account buyer = await accountService.Get(1);
+
+            await buyStockService.BuyStock(buyer, "BTCUSD",5);
 
             Window w = new MainWindow();
             w.DataContext = new MainViewModel();
