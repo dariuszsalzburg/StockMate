@@ -20,7 +20,7 @@ namespace StockMate.Domain.Services.TransactionService
             _cryptoAssetService = cryptoAssetService;
             _accountService = accountService;
         }
-
+         
 
 
         public async Task<Account> BuyStock(Account buyer, string symbol, int shares)
