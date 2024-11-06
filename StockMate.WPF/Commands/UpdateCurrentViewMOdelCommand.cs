@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace StockMate.WPF.Commands
 {
-    public class UpdateCurrentViewModelCommand : ICommand
+    public class UpdateCurrentViewModelCommand : ICommand         //Ta klasa jest komendą (implementującą interfejs ICommand) odpowiedzialną za aktualizację bieżącego ViewModelu w aplikacji
     {
         public event EventHandler? CanExecuteChanged;
         private readonly INavigator _navigator;

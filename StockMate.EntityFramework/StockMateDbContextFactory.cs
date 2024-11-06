@@ -5,7 +5,7 @@ using System;
 
 namespace StockMate.EntityFramework
 {
-    public class StockMateDbContextFactory : IDesignTimeDbContextFactory<StockMateDbContext>
+    public class StockMateDbContextFactory : IDesignTimeDbContextFactory<StockMateDbContext>     //Klasa StockMateDbContextFactory jest odpowiedzialna za tworzenie instancji StockMateDbContext.
     {
         public StockMateDbContext CreateDbContext(string[] args = null)
         {

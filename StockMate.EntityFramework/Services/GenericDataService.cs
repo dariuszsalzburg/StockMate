@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.EntityFramework.Services
 {
-    public class GenericDataService<T> : IDataService<T> where T : DomainObject
+    public class GenericDataService<T> : IDataService<T> where T : DomainObject              //GenericDataService to generyczna(pozwala na prace z dowolnym typem danych w ramach jedbej definicji klasy) implementacja interfejsu IDataService<T>, pozwalająca na uniwersalne operacje CRUD na dowolnym typie DomainObject.
     {
         private readonly StockMateDbContextFactory _contextFactory;
 

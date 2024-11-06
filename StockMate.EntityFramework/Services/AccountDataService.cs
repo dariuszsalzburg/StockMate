@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.EntityFramework.Services
 {
-    public class AccountDataService : IAccountService
+    public class AccountDataService : IAccountService     //AccountDataService to specjalna usługa dla obiektów Account. Dziedziczy po IAccountService i dostarcza dodatkowe metody pozwalające wyszukiwać konta po nazwie użytkownika lub adresie e-mail.
     {
         private readonly StockMateDbContextFactory _contextFactory;
         private readonly NonQueryDataService<Account> _nonQueryDataService;

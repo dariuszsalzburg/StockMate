@@ -9,7 +9,7 @@ namespace StockMate.Domain.Services.TransactionService
 {
     public interface IBuyStockService
     {
-        Task<Account> BuyStock(Account buyer, string stock, int shares);
+        Task<Account> BuyStock(Account buyer, string symbol, int shares);
 
 
     }

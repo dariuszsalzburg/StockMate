@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace StockMate.WPF.State.Navigation
 {
-    public class Navigator : INavigator, INotifyPropertyChanged
+    public class Navigator :  ViewModelBase, INavigator
     {
 
         private ViewModelBase _currentViewModel;
@@ -41,12 +41,6 @@ namespace StockMate.WPF.State.Navigation
 
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
 
     }

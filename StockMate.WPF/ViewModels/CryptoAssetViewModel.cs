@@ -13,6 +13,11 @@ namespace StockMate.WPF.ViewModels
             _cryptoAssetService = cryptoAssetService;
         }
         private CryptoAsset _btc;
+        private CryptoAsset _eth;
+
+
+
+
         public CryptoAsset Bitcoin 
         { 
      
@@ -23,15 +28,27 @@ namespace StockMate.WPF.ViewModels
             set { _btc = value; OnPropertyChanged(nameof(Bitcoin)); } 
            
         }
+        public CryptoAsset Ethereum
+        {
+
+            get
+            {
+                return _eth;
+            }
+
+            set { _eth = value; OnPropertyChanged(nameof(Ethereum)); }
+
+        }
 
         public static CryptoAssetViewModel LoadCryptoAssetViewModel(ICryptoAssetService cryptoAssetService)
         {
             var cryptoAssetViewModel = new CryptoAssetViewModel(cryptoAssetService);
-            cryptoAssetViewModel.LoadCryptoAssets();
+            cryptoAssetViewModel.LoadCryptoAssetsBTC();
+            cryptoAssetViewModel.LoadCryptoAssetsETH();
             return cryptoAssetViewModel;
         }
 
-        private void LoadCryptoAssets()
+        private void LoadCryptoAssetsBTC()
         {
             _cryptoAssetService.GetCryptoAsset("BTCUSD").ContinueWith((task) =>
             {
@@ -40,6 +57,16 @@ namespace StockMate.WPF.ViewModels
                     Bitcoin = task.Result;
                 }
             }); 
+        }
+        private void LoadCryptoAssetsETH()
+        {
+            _cryptoAssetService.GetCryptoAsset("ETHUSD").ContinueWith((task) =>
+            {
+                if (task.Exception == null)
+                {
+                    Ethereum = task.Result;
+                }
+            });
         }
     }
 }

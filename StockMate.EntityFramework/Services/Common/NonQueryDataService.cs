@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.EntityFramework.Services.Common
 {
-    public class NonQueryDataService<T> where T : DomainObject
+    public class NonQueryDataService<T> where T : DomainObject                    // Klasa NonQueryDataService umożliwia tworzenie, aktualizowanie i usuwanie rekordów dowolnego typu T w bazie danych, zakładając, że T dziedziczy po DomainObject (czyli posiada Id).
     {
         private readonly StockMateDbContextFactory _contextFactory;
 

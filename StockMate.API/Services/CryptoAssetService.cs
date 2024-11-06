@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockMate.Domain.Services
 {
-    public class CryptoAssetService : ICryptoAssetService
+    public class CryptoAssetService : ICryptoAssetService         // Klasa CryptoAssetService zajmuje się pobieraniem informacji o kryptowalutach z zewnętrznego API.
     {
         private readonly HttpClient _httpClient;
 
